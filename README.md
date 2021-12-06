@@ -1,4 +1,4 @@
-# coicoin
+# CoiCoin
 
 A new Flutter project.
 
