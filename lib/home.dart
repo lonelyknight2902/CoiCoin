@@ -73,7 +73,11 @@ class _HomeState extends State<Home> {
                   },
                   style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
-                    icon: Icon(
+                    enabledBorder: const UnderlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.blueGrey, width: 0.0),
+                    ),
+                    icon: const Icon(
                       Icons.search,
                       color: Colors.white,
                     ),

@@ -57,7 +57,7 @@ class CoinCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  price.toString(),
+                  '\$$price',
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
@@ -65,7 +65,7 @@ class CoinCard extends StatelessWidget {
                 const SizedBox(height: 0.1),
                 Row(children: <Widget>[
                   Text(
-                    change.toString(),
+                    '\$$change',
                     style: TextStyle(
                       color: change > 0 ? Colors.green : Colors.red,
                       fontWeight: FontWeight.bold,
