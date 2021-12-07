@@ -27,13 +27,15 @@ Through the training course, DevFest-ers should be able to:
 
 - Logo
 
-![Logo](./screenshots/desktop.png)
+![Logo](./assets/design.png)
 
 - App
 
 <p align="center">
-  <img width="30%" src="./screenshots/mobile.png">
-  <img width="30%" src="./screenshots/mobile-error.png">
+  <img width="30%" src="./assets/flutter_01.png">
+  <img width="30%" src="./assets/flutter_02.png">
+  <img width="30%" src="./assets/flutter_03.png">
+  <img width="30%" src="./assets/flutter_04.png">
 </p>
 
 ## Process
@@ -44,7 +46,7 @@ Through the training course, DevFest-ers should be able to:
 - Colors, Icons, Credit Card Slider from Flutter Material and Package
 - Cryto APIs from CoinMarketCap
 
-### What I learned
+### What We learned
 
 After finishing the project, I am finally able to learn how to use SASS to improve my performance in styling as well as responsive design for mobile and desktop screen size.
 
