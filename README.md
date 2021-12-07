@@ -30,7 +30,7 @@ Through the training course, DevFest-ers should be able to:
 
 ![Logo](./assets/Design.jpg)
 
-- App
+- Appview
 
 <p align="center">
   <img width="30%" src="./assets/flutter_01.png">
