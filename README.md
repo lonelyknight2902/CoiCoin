@@ -24,7 +24,7 @@ Through the training course, DevFest-ers should be able to:
 - Manage State in Flutter
 - Build a Flutter App and do Testings.
 
-### Screenshot
+### Photos
 
 - Logo
 
