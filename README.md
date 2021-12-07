@@ -1,43 +1,94 @@
-# CoiCoin Cryto Tracker Basic Application
+# CoiCoin Cryto Tracker - Demo Product
 
-Simple overview of use/purpose.
+This is a basic cryptocurrency price-tracking application to the [Demo Product on Google DevFest HCMC 2021](https://devfesthcm.com/). Google DevFest HCMC 2021 is a special training course on Flutter which helps you to improve your knowledge of building the front-end of a realistic application.
 
-## Description
+## Table of contents
 
-An in-depth paragraph about your project and overview of use.
+- [Overview](#overview)
+  - [The course](#the-course)
+  - [Photos](#photos)
+- [Process](#process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Contributors](#contributors)
 
-## Getting Started
+## Overview
 
-### Dependencies
+### The course
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+Through the training course, DevFest-ers should be able to:
 
-### Installing
+- Get used to the Dart Programming Language.
+- Know Layout, Navigation, and Theming in Flutter.
+- Manage State in Flutter
+- Build a Flutter App and do Testings.
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+### Screenshot
 
-### Executing program
+- Logo
 
-* How to run the program
-* Step-by-step bullets
+![Logo](./screenshots/desktop.png)
+
+- App
+
+<p align="center">
+  <img width="30%" src="./screenshots/mobile.png">
+  <img width="30%" src="./screenshots/mobile-error.png">
+</p>
+
+## Process
+
+### Built with
+
+- Dart
+- Colors, Icons, Credit Card Slider from Flutter Material and Package
+- Cryto APIs from CoinMarketCap
+
+### What I learned
+
+After finishing the project, I am finally able to learn how to use SASS to improve my performance in styling as well as responsive design for mobile and desktop screen size.
+
+- Variables in SCSS
+```scss
+$desaturated-red: hsl(0, 36%, 70%);
+$dark-grayish-red: hsl(0, 6%, 24%);
+$lightgray: hsl(356,18%,82%);
+$gradient1: hsl(0, 0%, 100%);
+$gradient2: hsl(0, 100%, 98%);
+$light-gradient2: hsl(0, 73%, 90%);
+$gradient3: hsl(0, 80%, 86%);
+$gradient4: hsl(0, 74%, 74%);
+$error: hsl(0,65%,65%);
+$angle: 135deg;
 ```
-code blocks for commands
+- Add Event listener in Javascript
+```js
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if(!re.test(document.forms["submit"]["email"].value)) {
+        msg.style.display = "block";
+        icon.style.display = "flex";
+    } else {
+        msg.style.display = "none";
+        icon.style.display = "none";
+    }
+})
 ```
 
-## Authors
+### Continued development
 
-Contributors names and contact info
+## Contributors
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 1.0
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+- Đỗ Trường Thịnh
+   - Github - [lonelyknight2902](https://github.com/lonelyknight2902)
+   - Linkedin - [Trường Thịnh Đỗ](www.linkedin.com/in/trường-thịnh-đỗ-418616209)
+- Nguyên
+   - Github - [lonelyknight2902](https://github.com/lonelyknight2902)
+   - Linkedin - [Trường Thịnh Đỗ](www.linkedin.com/in/trường-thịnh-đỗ-418616209)
+- Phạm Đức Hải
+   - Github - [lonelyknight2902](https://github.com/lonelyknight2902)
+   - Linkedin - [Trường Thịnh Đỗ](www.linkedin.com/in/trường-thịnh-đỗ-418616209)
+- Phạm Anh Quân
+   - Github - [ethanpham](https://github.com/ethanpham)
+   - Linkedin - [Quân Phạm Anh](https://www.linkedin.com/in/qu%C3%A2n-ph%E1%BA%A1m-anh-a54464217/)
+  
