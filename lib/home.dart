@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:http/http.dart' as http;
 import 'coin_card.dart';
 import './coin.dart';
+import './drawer.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -63,6 +63,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: NavBar(),
         appBar: AppBar(
           title: !isSearching
               ? Image.asset(
@@ -108,13 +109,6 @@ class _HomeState extends State<Home> {
                         isSearching = true;
                       });
                     },
-                  ),
-                  const IconButton(
-                    icon: Icon(
-                      Icons.account_circle,
-                      color: Colors.white,
-                    ),
-                    onPressed: null,
                   ),
                 ]
               : [],

@@ -5,6 +5,7 @@ import 'package:credit_card_slider/credit_card_widget.dart';
 import 'package:credit_card_slider/validity.dart';
 import 'package:flutter/material.dart';
 import 'package:credit_card_slider/credit_card_slider.dart';
+import './drawer.dart';
 
 class Account extends StatefulWidget {
   Account({Key? key}) : super(key: key);
@@ -20,23 +21,10 @@ class AccountState extends State<Account> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: NavBar(),
         appBar: AppBar(
           centerTitle: true,
           title: Image.asset('assets/coicoin_logo.png', height: 30),
-          leading: IconButton(
-            icon: Icon(
-              Icons.bar_chart,
-            ),
-            color: Colors.white,
-            onPressed: () {},
-          ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.account_circle_rounded),
-              color: Colors.white,
-            )
-          ],
         ),
         body: Container(
           alignment: Alignment.center,
