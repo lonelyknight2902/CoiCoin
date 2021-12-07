@@ -28,7 +28,6 @@ class _HomeState extends State<Home> {
           }
         }
       }
-      print(coinList.first.name);
       setState(() {
         coinList;
       });

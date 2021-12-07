@@ -22,7 +22,7 @@ class CoinCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.fromLTRB(16.0, 2.0, 0.0, 0.0),
+            padding: const EdgeInsets.fromLTRB(16.0, 2.0, 16.0, 0.0),
             child: AspectRatio(
                 aspectRatio: 18.0 / 11.0,
                 child: Row(
@@ -51,7 +51,7 @@ class CoinCard extends StatelessWidget {
                 )),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(16.0, 2.0, 16.0, 2.0),
+            padding: const EdgeInsets.fromLTRB(16.0, 1.0, 16.0, 2.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -78,8 +78,11 @@ class CoinCard extends StatelessWidget {
                           color: Colors.green,
                           size: 30,
                         )
-                      : const Icon(Icons.arrow_drop_down_rounded,
-                          color: Colors.red),
+                      : const Icon(
+                          Icons.arrow_drop_down_rounded,
+                          color: Colors.red,
+                          size: 30,
+                        ),
                 ]),
                 //const SizedBox(height: 1.0),
                 Text(
