@@ -30,7 +30,7 @@ class CoinCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Image.network(imageUrl, width: 50),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Expanded(
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -42,7 +42,7 @@ class CoinCard extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                 )),
                             Text(symbol,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 10,
                                 )),
                           ]),
