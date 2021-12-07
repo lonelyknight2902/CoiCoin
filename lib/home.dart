@@ -13,7 +13,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   bool isSearching = false;
-  var _controller = TextEditingController();
+  final _controller = TextEditingController();
 
   Future<List<Coin>> fetchCoin() async {
     coinList = [];
