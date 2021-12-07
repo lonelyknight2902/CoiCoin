@@ -9,7 +9,7 @@ class CoinCard extends StatelessWidget {
   final double change;
   final double changePercentage;
 
-  CoinCard(this.name, this.symbol, this.imageUrl, this.price, this.change,
+  const CoinCard(this.name, this.symbol, this.imageUrl, this.price, this.change,
       this.changePercentage);
   @override
   Widget build(BuildContext context) {

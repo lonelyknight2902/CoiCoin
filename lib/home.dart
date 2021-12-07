@@ -7,6 +7,8 @@ import './coin.dart';
 import './drawer.dart';
 
 class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
   State<Home> createState() => _HomeState();
 }
@@ -24,7 +26,7 @@ class _HomeState extends State<Home> {
     if (response.statusCode == 200) {
       List<dynamic> values = [];
       values = json.decode(response.body);
-      if (values.length > 0) {
+      if (values.isNotEmpty) {
         for (int i = 0; i < values.length; i++) {
           if (values[i] != null) {
             Map<String, dynamic> map = values[i];
@@ -39,7 +41,8 @@ class _HomeState extends State<Home> {
       });
 
       return coinList;
-    } else {
+    }
+    else {
       throw Exception("Failed to load");
     }
   }
@@ -63,7 +66,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: NavBar(),
+        drawer: const NavBar(),
         appBar: AppBar(
           centerTitle: true,
           title: !isSearching
@@ -87,7 +90,7 @@ class _HomeState extends State<Home> {
                       color: Colors.white,
                     ),
                     hintText: "Search Coin Here",
-                    hintStyle: TextStyle(color: Colors.white),
+                    hintStyle: const TextStyle(color: Colors.white),
                     suffixIcon: IconButton(
                       onPressed: () {
                         setState(() {
@@ -96,14 +99,14 @@ class _HomeState extends State<Home> {
                           filter = coinList;
                         });
                       },
-                      icon: Icon(Icons.clear),
+                      icon: const Icon(Icons.clear),
                     ),
                   ),
                 ),
           actions: !isSearching
               ? [
                   IconButton(
-                    icon: Icon(Icons.search),
+                    icon: const Icon(Icons.search),
                     color: Colors.white,
                     onPressed: () {
                       setState(() {

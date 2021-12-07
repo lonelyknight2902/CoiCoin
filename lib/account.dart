@@ -8,7 +8,7 @@ import 'package:credit_card_slider/credit_card_slider.dart';
 import './drawer.dart';
 
 class Account extends StatefulWidget {
-  Account({Key? key}) : super(key: key);
+  const Account({Key? key}) : super(key: key);
 
   @override
   AccountState createState() => AccountState();
@@ -21,7 +21,7 @@ class AccountState extends State<Account> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: NavBar(),
+        drawer: const NavBar(),
         appBar: AppBar(
           centerTitle: true,
           title: Image.asset('assets/coicoin_logo.png', height: 30),
@@ -43,12 +43,12 @@ class AccountState extends State<Account> {
                     fontWeight: FontWeight.bold,
                     foreground: Paint()..shader = linearGradient),
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               Transform.scale(
                 scale: 1.2,
                 child: CreditCard(
                   cardBackground:
-                      ImageCardBackground(AssetImage('assets/card_bg.png')),
+                      ImageCardBackground(const AssetImage('assets/card_bg.png')),
                   cardNetworkType: CardNetworkType.visa,
                   cardHolderName: 'DevFest HCMC',
                   cardNumber: '4716085933146241',
