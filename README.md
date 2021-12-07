@@ -10,6 +10,7 @@ This is a basic cryptocurrency price-tracking application to the [Demo Product o
 - [Process](#process)
   - [Built with](#built-with)
   - [What we learned](#what-we-learned)
+  - [How to run](#how-to-run)
 - [Contributors](#contributors)
 
 ## Overview
@@ -147,6 +148,12 @@ After finishing the project, we can build a Menu Bar on the side, a Credit Card 
     }
   }
 ```
+
+### How to run
+```cmd
+  flutter run --no-sound-null-safety
+```
+
 
 ## Contributors
 
