@@ -27,13 +27,15 @@ Through the training course, DevFest-ers should be able to:
 
 - Logo
 
-![Logo](./assets/design.png)
+![Logo](./assets/Design.jpg)
 
 - App
 
 <p align="center">
   <img width="30%" src="./assets/flutter_01.png">
   <img width="30%" src="./assets/flutter_02.png">
+</p>
+<p align="center">
   <img width="30%" src="./assets/flutter_03.png">
   <img width="30%" src="./assets/flutter_04.png">
 </p>
@@ -46,35 +48,104 @@ Through the training course, DevFest-ers should be able to:
 - Colors, Icons, Credit Card Slider from Flutter Material and Package
 - Cryto APIs from CoinMarketCap
 
-### What We learned
+### What we learned
 
-After finishing the project, I am finally able to learn how to use SASS to improve my performance in styling as well as responsive design for mobile and desktop screen size.
+After finishing the project, we can build a Menu Bar on the side, a Credit Card and a realtime automatically updated data using Cryto APIs.
 
-- Variables in SCSS
-```scss
-$desaturated-red: hsl(0, 36%, 70%);
-$dark-grayish-red: hsl(0, 6%, 24%);
-$lightgray: hsl(356,18%,82%);
-$gradient1: hsl(0, 0%, 100%);
-$gradient2: hsl(0, 100%, 98%);
-$light-gradient2: hsl(0, 73%, 90%);
-$gradient3: hsl(0, 80%, 86%);
-$gradient4: hsl(0, 74%, 74%);
-$error: hsl(0,65%,65%);
-$angle: 135deg;
+- Menu Bar
+```dart
+@override
+  Widget build(BuildContext context) {
+    return Drawer(
+        child: ListView(
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: const Text('DevFestChan'),
+              accountEmail: const Text('emiudevfest@hcmut.edu.vn'),
+              currentAccountPicture: CircleAvatar(
+                  child: ClipOval(
+                    child: Image.asset('./assets/doge.jpg'),
+                  )),
+            ),
+            ListTile(
+                leading: const Icon(Icons.favorite),
+                title: const Text('Coi Your Coin'),
+            ListTile(
+                leading: const Icon(Icons.money),
+                title: const Text('Coi Your Card'),
+          ],
+    ));
+  }
 ```
-- Add Event listener in Javascript
-```js
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if(!re.test(document.forms["submit"]["email"].value)) {
-        msg.style.display = "block";
-        icon.style.display = "flex";
-    } else {
-        msg.style.display = "none";
-        icon.style.display = "none";
+- Credit Card.
+```dart
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Image.asset('assets/coicoin_logo.png', height: 30),
+        ),
+        body: Container(
+          alignment: Alignment.center,
+          padding: const EdgeInsets.fromLTRB(5.0, 40.0, 5.0, 0.0),
+          child: Column(
+            children: <Widget>[
+              Text(
+                '\$156.89',
+                style: TextStyle(foreground: Paint()..shader = linearGradient)),
+              Text(
+                'Available Balance',
+                style: TextStyle(foreground: Paint()..shader = linearGradient),
+              ),
+              const SizedBox(height: 50),
+              Transform.scale(
+                scale: 1.2,
+                child: CreditCard(
+                  cardBackground:
+                      ImageCardBackground(const AssetImage('assets/card_bg.png')),
+                  cardNetworkType: CardNetworkType.visa,
+                  cardHolderName: 'DevFest HCMC',
+                  cardNumber: '4716085933146241',
+                  company: CardCompany.americanExpress,
+                  validity: Validity(validThruMonth: 8, validThruYear: 2025),
+                ),
+              ),
+            ],
+          ),
+        ));
+  }
+```
+- Cryto APIs.
+```dart
+  Future<List<Coin>> fetchCoin() async {
+    coinList = [];
+    filter = [];
+    final response = await http.get(Uri.parse(
+        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'));
+
+    if (response.statusCode == 200) {
+      List<dynamic> values = [];
+      values = json.decode(response.body);
+      if (values.isNotEmpty) {
+        for (int i = 0; i < values.length; i++) {
+          if (values[i] != null) {
+            Map<String, dynamic> map = values[i];
+            coinList.add(Coin.fromJson(map));
+            filter.add(Coin.fromJson(map));
+          }
+        }
+      }
+      setState(() {
+        coinList;
+        filter;
+      });
+      return coinList;
     }
-})
+    else {
+      throw Exception("Failed to load");
+    }
+  }
 ```
 
 ### Continued development
@@ -84,12 +155,12 @@ form.addEventListener("submit", (e) => {
 - Đỗ Trường Thịnh
    - Github - [lonelyknight2902](https://github.com/lonelyknight2902)
    - Linkedin - [Trường Thịnh Đỗ](www.linkedin.com/in/trường-thịnh-đỗ-418616209)
-- Nguyên
-   - Github - [lonelyknight2902](https://github.com/lonelyknight2902)
-   - Linkedin - [Trường Thịnh Đỗ](www.linkedin.com/in/trường-thịnh-đỗ-418616209)
+- Hứa Hoàng Nguyên
+   - Github - [SleepyCatOnTheBed](https://github.com/SleepyCatOnTheBed)
+   - Linkedin - [Hoàng Nguyên Hứa](www.linkedin.com/in/trường-thịnh-đỗ-418616209)
 - Phạm Đức Hải
-   - Github - [lonelyknight2902](https://github.com/lonelyknight2902)
-   - Linkedin - [Trường Thịnh Đỗ](www.linkedin.com/in/trường-thịnh-đỗ-418616209)
+   - Github - [ihaveatalkingtree](https://github.com/ihaveatalkingtree)
+   - Linkedin - [Hải Phạm Đức](www.linkedin.com/in/trường-thịnh-đỗ-418616209)
 - Phạm Anh Quân
    - Github - [ethanpham](https://github.com/ethanpham)
    - Linkedin - [Quân Phạm Anh](https://www.linkedin.com/in/qu%C3%A2n-ph%E1%BA%A1m-anh-a54464217/)
