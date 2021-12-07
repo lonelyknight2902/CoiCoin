@@ -9,7 +9,7 @@ This is a basic cryptocurrency price-tracking application to the [Demo Product o
   - [Photos](#photos)
 - [Process](#process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
+  - [What we learned](#what-we-learned)
 - [Contributors](#contributors)
 
 ## Overview
@@ -147,8 +147,6 @@ After finishing the project, we can build a Menu Bar on the side, a Credit Card 
     }
   }
 ```
-
-### Continued development
 
 ## Contributors
 
