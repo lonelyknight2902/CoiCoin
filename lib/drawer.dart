@@ -11,8 +11,8 @@ class NavBar extends StatelessWidget {
         child: ListView(
       children: [
         UserAccountsDrawerHeader(
-          accountName: Text('User12345'),
-          accountEmail: Text('abc@hcmut.edu.vn'),
+          accountName: Text('DevFestChan'),
+          accountEmail: Text('emiudevfest@hcmut.edu.vn'),
           currentAccountPicture: CircleAvatar(
               backgroundColor: Colors.blueGrey.shade800,
               child: ClipOval(
