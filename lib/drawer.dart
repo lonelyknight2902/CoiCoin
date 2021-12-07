@@ -11,32 +11,27 @@ class NavBar extends StatelessWidget {
         child: ListView(
       children: [
         UserAccountsDrawerHeader(
-          accountName: Text('User12345'),
-          accountEmail: Text('abc@hcmut.edu.vn'),
+          accountName: const Text('DevFestChan'),
+          accountEmail: const Text('emiudevfest@hcmut.edu.vn'),
           currentAccountPicture: CircleAvatar(
               backgroundColor: Colors.blueGrey.shade800,
               child: ClipOval(
-                child: Image.network(
-                  'https://coin68.com/wp-content/uploads/2021/10/DOGE-Thug-Life.jpg',
-                  width: 45,
-                  height: 45,
-                  fit: BoxFit.cover,
-                ),
+                child: Image.asset('./assets/doge.jpg'),
               )),
         ),
         ListTile(
-            leading: Icon(Icons.favorite),
-            title: Text('Trang Coin'),
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => Account()));
-            }),
-        ListTile(
-            leading: Icon(Icons.money),
-            title: Text('Trang Main'),
+            leading: const Icon(Icons.favorite),
+            title: const Text('Coi Your Coin'),
             onTap: () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (_) => Home()));
+            }),
+        ListTile(
+            leading: const Icon(Icons.money),
+            title: const Text('Coi Your Card'),
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => Account()));
             }),
       ],
     ));
