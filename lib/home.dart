@@ -12,6 +12,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  bool isSearching = false;
+  var _controller = TextEditingController();
+
   Future<List<Coin>> fetchCoin() async {
     coinList = [];
     final response = await http.get(Uri.parse(
@@ -25,6 +28,7 @@ class _HomeState extends State<Home> {
           if (values[i] != null) {
             Map<String, dynamic> map = values[i];
             coinList.add(Coin.fromJson(map));
+            filter.add(Coin.fromJson(map));
           }
         }
       }
@@ -38,6 +42,15 @@ class _HomeState extends State<Home> {
     }
   }
 
+  void _filterList(String value) {
+    setState(() {
+      filter = coinList
+          .where(
+              (coin) => coin.name.toLowerCase().contains(value.toLowerCase()))
+          .toList();
+    });
+  }
+
   @override
   void initState() {
     fetchCoin();
@@ -48,34 +61,71 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Image.asset(
-            'assets/coicoin_logo.png',
-            height: 30,
-          ),
-          actions: const [
-            IconButton(
-              icon: Icon(
-                Icons.account_circle,
-                color: Colors.white,
-              ),
-              onPressed: null,
-            ),
-          ],
+          title: !isSearching
+              ? Image.asset(
+                  'assets/coicoin_logo.png',
+                  height: 30,
+                )
+              : TextField(
+                  controller: _controller,
+                  onChanged: (value) {
+                    _filterList(value);
+                  },
+                  style: const TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    icon: Icon(
+                      Icons.search,
+                      color: Colors.white,
+                    ),
+                    hintText: "Search Coin Here",
+                    hintStyle: TextStyle(color: Colors.white),
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          _controller.clear();
+                          isSearching = false;
+                          filter = coinList;
+                        });
+                      },
+                      icon: Icon(Icons.clear),
+                    ),
+                  ),
+                ),
+          actions: !isSearching
+              ? [
+                  IconButton(
+                    icon: Icon(Icons.search),
+                    color: Colors.white,
+                    onPressed: () {
+                      setState(() {
+                        isSearching = true;
+                      });
+                    },
+                  ),
+                  const IconButton(
+                    icon: Icon(
+                      Icons.account_circle,
+                      color: Colors.white,
+                    ),
+                    onPressed: null,
+                  ),
+                ]
+              : [],
           backgroundColor: Colors.blueGrey[800],
         ),
         body: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
           ),
-          itemCount: coinList.length,
+          itemCount: filter.length,
           itemBuilder: (context, index) {
             return CoinCard(
-                coinList[index].name,
-                coinList[index].symbol,
-                coinList[index].imageUrl,
-                coinList[index].price.toDouble(),
-                coinList[index].change.toDouble(),
-                coinList[index].changePercentage.toDouble());
+                filter[index].name,
+                filter[index].symbol,
+                filter[index].imageUrl,
+                filter[index].price.toDouble(),
+                filter[index].change.toDouble(),
+                filter[index].changePercentage.toDouble());
           },
         ));
   }

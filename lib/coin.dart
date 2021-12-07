@@ -20,3 +20,4 @@ class Coin {
 }
 
 List<Coin> coinList = [];
+List<Coin> filter = [];
