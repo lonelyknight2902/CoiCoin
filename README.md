@@ -34,10 +34,10 @@ Through the training course, DevFest-ers should be able to:
 
 <p align="center">
   <img width="30%" src="./assets/flutter_01.png">
-  <img width="30%" src="./assets/flutter_02.png">
+  <img width="30%" src="./assets/flutter_03.png">
 </p>
 <p align="center">
-  <img width="30%" src="./assets/flutter_03.png">
+  <img width="30%" src="./assets/flutter_02.png">
   <img width="30%" src="./assets/flutter_04.png">
 </p>
 
@@ -151,7 +151,8 @@ After finishing the project, we can build a Menu Bar on the side, a Credit Card 
 
 ### How to run
 ```cmd
-  flutter run --no-sound-null-safety
+  $ dart --no-sound-null-safety run
+  $ flutter run --no-sound-null-safety
 ```
 
 
