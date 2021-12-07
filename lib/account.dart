@@ -1,5 +1,10 @@
+import 'package:credit_card_slider/card_background.dart';
+import 'package:credit_card_slider/card_company.dart';
+import 'package:credit_card_slider/card_network_type.dart';
+import 'package:credit_card_slider/credit_card_widget.dart';
+import 'package:credit_card_slider/validity.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_credit_card/flutter_credit_card.dart';
+import 'package:credit_card_slider/credit_card_slider.dart';
 
 class Account extends StatefulWidget {
   Account({Key? key}) : super(key: key);
@@ -9,9 +14,9 @@ class Account extends StatefulWidget {
 }
 
 class AccountState extends State<Account> {
-  final Shader linearGradient = LinearGradient(
-    colors: <Color>[Color(0xffDA44bb), Color(0xff8921aa)],
-  ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
+  final Shader linearGradient = const LinearGradient(
+    colors: <Color>[Color(0xFFD6D6D6), Color(0xFFEEEEEE), Color(0xFF212121)],
+  ).createShader(const Rect.fromLTWH(0.0, 0.0, 750.0, 1000.0));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,25 +40,33 @@ class AccountState extends State<Account> {
         ),
         body: Container(
           alignment: Alignment.center,
-          padding: const EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 0.0),
+          padding: const EdgeInsets.fromLTRB(5.0, 40.0, 5.0, 0.0),
           child: Column(
-            children: [
-              Text('\$156.89', style: TextStyle(fontSize: 40)),
+            children: <Widget>[
+              Text('\$156.89',
+                  style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      foreground: Paint()..shader = linearGradient)),
               Text(
                 'Available Balance',
-                style: TextStyle(fontSize: 35),
+                style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                    foreground: Paint()..shader = linearGradient),
               ),
-              CreditCardWidget(
-                cardBgColor: Colors.blueGrey.shade800,
-                cardNumber: '4532240806065307',
-                expiryDate: '8/2025',
-                cardHolderName: 'Testing',
-                isHolderNameVisible: true,
-                cvvCode: '900',
-                obscureCardNumber: true,
-                obscureCardCvv: true,
-                onCreditCardWidgetChange: (Visa) {},
-                showBackView: false,
+              SizedBox(height: 50),
+              Transform.scale(
+                scale: 1.2,
+                child: CreditCard(
+                  cardBackground:
+                      ImageCardBackground(AssetImage('assets/card_bg.png')),
+                  cardNetworkType: CardNetworkType.visa,
+                  cardHolderName: 'DevFest HCMC',
+                  cardNumber: '4716085933146241',
+                  company: CardCompany.americanExpress,
+                  validity: Validity(validThruMonth: 8, validThruYear: 2025),
+                ),
               ),
             ],
           ),
