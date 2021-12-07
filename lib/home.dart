@@ -65,6 +65,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
         drawer: NavBar(),
         appBar: AppBar(
+          centerTitle: true,
           title: !isSearching
               ? Image.asset(
                   'assets/coicoin_logo.png',
@@ -112,9 +113,10 @@ class _HomeState extends State<Home> {
                   ),
                 ]
               : [],
-          backgroundColor: Colors.blueGrey[800],
+          //backgroundColor: Colors.blueGrey[800],
         ),
         body: GridView.builder(
+          scrollDirection: Axis.vertical,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
           ),
@@ -125,7 +127,7 @@ class _HomeState extends State<Home> {
                 filter[index].symbol,
                 filter[index].imageUrl,
                 filter[index].price.toDouble(),
-                filter[index].change.toDouble(),
+                double.parse(filter[index].change.toDouble().toStringAsFixed(5)),
                 filter[index].changePercentage.toDouble());
           },
         ));
