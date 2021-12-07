@@ -49,14 +49,19 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: const IconButton(
-            icon: Icon(
-              Icons.account_circle,
-              color: Colors.white,
-            ),
-            onPressed: null,
+          title: Image.asset(
+            'assets/coicoin_logo.png',
+            height: 30,
           ),
-          title: const Text('CoiCoin'),
+          actions: const [
+            IconButton(
+              icon: Icon(
+                Icons.account_circle,
+                color: Colors.white,
+              ),
+              onPressed: null,
+            ),
+          ],
           backgroundColor: Colors.blueGrey[800],
         ),
         body: GridView.builder(

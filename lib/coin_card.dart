@@ -31,20 +31,22 @@ class CoinCard extends StatelessWidget {
                   children: [
                     Image.network(imageUrl, width: 50),
                     SizedBox(width: 10),
-                    Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(name,
-                              style: const TextStyle(
-                                fontSize: 11,
-                                fontWeight: FontWeight.bold,
-                                overflow: TextOverflow.ellipsis,
-                              )),
-                          Text(symbol, style: TextStyle(
-                            fontSize: 10,
-                          )),
-                        ]),
+                    Expanded(
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(name,
+                                style: const TextStyle(
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                            Text(symbol,
+                                style: TextStyle(
+                                  fontSize: 10,
+                                )),
+                          ]),
+                    ),
                   ],
                 )),
           ),
@@ -60,7 +62,7 @@ class CoinCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 0.25),
+                const SizedBox(height: 0.1),
                 Row(children: <Widget>[
                   Text(
                     change.toString(),
@@ -83,7 +85,7 @@ class CoinCard extends StatelessWidget {
                 Text(
                   '$changePercentage%',
                   style: TextStyle(
-                    fontSize: 5,
+                    fontSize: 8,
                     color: change > 0
                         ? Colors.green.withOpacity(0.5)
                         : Colors.red.withOpacity(0.5),
