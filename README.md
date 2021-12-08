@@ -160,13 +160,12 @@ After finishing the project, we can build a Menu Bar on the side, a Credit Card 
 
 - Đỗ Trường Thịnh
    - Github - [lonelyknight2902](https://github.com/lonelyknight2902)
-   - Linkedin - [Trường Thịnh Đỗ](www.linkedin.com/in/trường-thịnh-đỗ-418616209)
+   - Linkedin - [Trường Thịnh Đỗ](https://www.linkedin.com/in/trường-thịnh-đỗ-418616209)
 - Hứa Hoàng Nguyên
    - Github - [SleepyCatOnTheBed](https://github.com/SleepyCatOnTheBed)
-   - Linkedin - [Hoàng Nguyên Hứa](www.linkedin.com/in/trường-thịnh-đỗ-418616209)
 - Phạm Đức Hải
    - Github - [ihaveatalkingtree](https://github.com/ihaveatalkingtree)
-   - Linkedin - [Hải Phạm Đức](www.linkedin.com/in/trường-thịnh-đỗ-418616209)
+   - Linkedin - [Hải Phạm Đức](https://www.linkedin.com/in/h%E1%BA%A3i-ph%E1%BA%A1m-%C4%91%E1%BB%A9c-158318206/)
 - Phạm Anh Quân
    - Github - [ethanpham](https://github.com/ethanpham)
    - Linkedin - [Quân Phạm Anh](https://www.linkedin.com/in/qu%C3%A2n-ph%E1%BA%A1m-anh-a54464217/)
