@@ -168,5 +168,5 @@ After finishing the project, we can build a Menu Bar on the side, a Credit Card 
    - Linkedin - [Hải Phạm Đức](https://www.linkedin.com/in/h%E1%BA%A3i-ph%E1%BA%A1m-%C4%91%E1%BB%A9c-158318206/)
 - Phạm Anh Quân
    - Github - [ethanpham](https://github.com/ethanpham)
-   - Linkedin - [Quân Phạm Anh](https://www.linkedin.com/in/quanpham-cse/)
+   - Linkedin - [Quan Pham](https://www.linkedin.com/in/quanpham-cse/)
   
